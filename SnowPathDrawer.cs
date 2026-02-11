@@ -88,17 +88,16 @@ public class SnowPathDrawer : MonoBehaviour
 
         float scaleX = snowController.transform.localScale.x;
 
-        float scaleZ = snowController.transform.localScale.z; // z 스케일이 맞습니다.
+        float scaleZ = snowController.transform.localScale.z;
 
 
 
         float snowPosX = snowController.transform.position.x;
 
-        float snowPosZ = snowController.transform.position.z; // z 좌표가 맞습니다.
+        float snowPosZ = snowController.transform.position.z;
 
 
 
-        // Plane의 중앙을 기준으로 좌표를 계산하는 원래 방식입니다.
 
         int posX = snowRT.width / 2 - (int)(((transform.position.x - snowPosX) * snowRT.width / 2) / scaleX);
 
@@ -137,5 +136,6 @@ public class SnowPathDrawer : MonoBehaviour
         snowComputeShader.Dispatch(kernel_handle, snowRT.width / 8, snowRT.height / 8, 1);
 
     }
+
 
 }
